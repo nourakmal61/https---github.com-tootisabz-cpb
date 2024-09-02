@@ -34,4 +34,4 @@ class TransactionAdmin(admin.ModelAdmin):
         queryset.update(transaction_type='fee')
     fee_transactions.short_description = 'Mark selected transactions as Fee' # type: ignore
 
-    actions = [transfer_transactions, deposit_transactions, withdraw_transactions, payment_transactions, interest_transactions, fee_transactions] # type: ignore
+    actions = [transfer_transactions, deposit_transactions, withdraw_transactions, payment_transactions, interest_transactions, fee_transactions] # type: ignore adsfadsfasfa
