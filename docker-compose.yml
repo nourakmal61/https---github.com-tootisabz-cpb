@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./django_project:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=CP_d
+      - DB_USER=akmal
+      - DB_PASS=root@123
+      - DEBUG=True
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: CP_d
+      POSTGRES_USER: akmal
+      POSTGRES_PASSWORD: root@123
